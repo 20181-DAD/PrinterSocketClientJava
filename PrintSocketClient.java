@@ -10,7 +10,7 @@ public class PrintSocketClient {
 		String resp="";
 		Socket s;
 		try {
-			s = new Socket( "172.22.90.1",7654 );//7654 //4321
+			s = new Socket( "127.0.0.1",10001 );//7654 //4321
 			
 			//Escribir (enviar) el texto en el servidor
 			pwr = new PrintWriter( new BufferedWriter( new OutputStreamWriter( 
@@ -24,15 +24,12 @@ public class PrintSocketClient {
 			
 			//System.out.println("Respuesta:"+br.readLine());
 			//System.out.println("Respuesta:"+br.readLine());
-
-			while ( (resp) != null ) {
-				resp = br.readLine();
-				System.out.println(resp);
-			}
+			System.out.println(texto);
 
 			//pwr.close();
 			//br.close();
 			s.close();
+			System.out.println(" transfer complete");
 			
 		} catch( IOException e ) {
 			System.out.println( e );
